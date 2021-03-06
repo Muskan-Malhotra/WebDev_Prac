@@ -7,10 +7,10 @@ console.log(a,b,c);
 //to create object
 
 let Data = {
-  name: "Shiva",
-  place: "Patna",
-  tagline: "Siddhi hates shiva",
-  show: "colors",
+  name: "Rosellete",
+  place: "Rome",
+  tagline: "World's Wonder",
+  show: "Colosseum",
   timings: 930,
 
   };
