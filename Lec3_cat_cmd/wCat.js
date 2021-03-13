@@ -19,8 +19,13 @@ for(let i=0; i<content.length; i++){
   }
 
 }
+//console.lof(flags);
+//console.log(files);
+//flag X
 
 let fileData = "";
+let str = "";
+// "" helps to convert buffer data of file system to string
 
 for(let i=0;i<files.length;i++){
   fileData += fs.readFileSync(files[i]);
@@ -28,7 +33,7 @@ for(let i=0;i<files.length;i++){
   fileData += " ";
 }
 
-console.log(fileData);
+// console.log(fileData);
 
 
 
