@@ -19,6 +19,9 @@
   "homepage": "https://github.com/Muskan-Malhotra/WebDev_Prac#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
+    "prompt": "^1.1.0",
+    "prompt-sync": "^4.2.0",
+    "puppeteer": "^8.0.0",
     "request": "^2.88.2"
   }
 }
