@@ -41,16 +41,17 @@ const links = await tab.evaluate(() => {
   let text_arr = [];
   for (let i = 0; i < arr.length; i += 1) {
       text_arr.push(arr[i].innerText.split('\n'));
+  
+  for(let key in text_arr){
+    obj[key] = {
+      TotalTime : text_arr[key][0],
+      SafeTimeToDepart: text_arr[key][1],
+      ViaSource: text_arr[key][2],
   }
-  // for(let key in obj){
-  //   obj = {
-  //     name : text_arr[j][0],
-  //     class: text_arr[j][1],
-  //     section: text_arr[j][2],
-  // }
-  // }
+  }
+}
   //first use innerHTML
-  return text_arr;
+  return obj;
 });
 
 // console.log(links);
