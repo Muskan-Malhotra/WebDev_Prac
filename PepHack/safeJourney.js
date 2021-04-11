@@ -4,7 +4,7 @@ const fs = require("fs");
 
 
 
-const src = "Vikaspuri New Delhi";
+var src = "Vikaspuri New Delhi";
 const des = "Subhash Nagar New Delhi";
 
 (async function(){
@@ -33,6 +33,8 @@ const des = "Subhash Nagar New Delhi";
 
 
 const links = await tab.evaluate(() => {
+  
+  // let destination = des;
   let obj = {};
   let names = document.querySelectorAll(
     ".section-layout .section-directions-trip.clearfix"
@@ -43,18 +45,27 @@ const links = await tab.evaluate(() => {
       text_arr.push(arr[i].innerText.split('\n'));
   
   for(let key in text_arr){
-    obj[key] = {
+    
+      obj[key] = {
+      ViaSource: text_arr[key][2],
       TotalTime : text_arr[key][0],
       SafeTimeToDepart: text_arr[key][1],
-      ViaSource: text_arr[key][2],
+      SafestRoute: text_arr[key][3],
+      
   }
+
   }
 }
+
+// if(text_arr[key][3]==undefined){
+    //   text_arr[key][3] = "Not a safe route";
+    // }
+    // else{}
   //first use innerHTML
   return obj;
 });
 
-// console.log(links);
+// console.log(links[2]);
 
 // let obj = {};
 
